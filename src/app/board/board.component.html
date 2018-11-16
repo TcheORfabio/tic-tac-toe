@@ -1,0 +1,15 @@
+<div>
+  <div class="gameStatus">  
+    {{ gameStatusMessage }}
+  </div>
+  <div class="board" *ngFor="let row of [0,1,2]">
+    <app-cell 
+      *ngFor="let col of [0,1,2]"
+      [value]="gameArray[col+row*3]"
+      (click)="handleMove(col+row*3)"
+    >
+    </app-cell>
+  </div>
+  <button class="restart" (click)="newGame()">New Game</button>
+</div>
+
